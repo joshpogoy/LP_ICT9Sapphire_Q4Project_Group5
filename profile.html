@@ -1,0 +1,192 @@
+<!-- profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .profile-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .profile-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-left .image-box {
+            width: 200px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .profile-left .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .profile-left .image-box span {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .profile-info {
+            position: static;
+            max-width: 500px;
+        }
+
+        .profile-info h1,
+        .profile-info h2,
+        .profile-info h3 {
+            text-align: left;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="align-center">
+
+            <img src="240_F_1114151666_hVky5499PWOaeqzgwKduGk7UCnQeDAjo.jpg"
+                 alt="Logo"
+                 class="rounded"
+                 style="width: 120px;
+                        height: 120px;
+                        margin-bottom: 20px;
+                        border-radius: 50%;">
+
+            <hr>
+
+            <nav>
+
+                <ul class="nav-links text">
+
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="classlist.html">Class List</a></li>
+                    <li><a href="tasks.html">Tasks</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+
+                    <li>
+                        <a href="#logout"
+                           onclick="Verifylogout(); return false;">
+                           Log Out
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="profile-row">
+            <div class="profile-left">
+                <div class="image-box">
+                    <img id="profileImage" src="" alt="Profile">
+                    <span id="placeholder">No image chosen</span>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <button type="button" onclick="document.getElementById('fileInput').click();" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">Choose File</button>
+            </div>
+
+            <div class="profile-info">
+
+                <form>
+
+                <h1>Student Information</h1>
+
+                <h3>
+                    Student ID:
+                    <br>
+                    SN123456
+                </h3>
+
+                <h3>
+                    Contact Number:
+                    <br>
+                    +635100000113
+                </h3>
+
+                <h3>
+                    Email:
+                    <br>
+                    janedoe@gmail.com
+                </h3>
+
+                <h3>
+                    Gender:
+                    <br>
+                    Male
+                </h3>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div class="sticky-item">
+
+    <p style="background-color: #475569;
+              color: #fff;
+              font-weight: bold;">
+
+        9-Sapphire: Group 5
+
+    </p>
+
+</div>
+
+
+<script>
+
+function Verifylogout() {
+
+    if (confirm("Are you sure you want to log out?")) {
+
+        window.location.href = 'index.html';
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

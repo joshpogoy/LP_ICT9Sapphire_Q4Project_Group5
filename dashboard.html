@@ -1,0 +1,182 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="align-center">
+
+            <img src="240_F_1114151666_hVky5499PWOaeqzgwKduGk7UCnQeDAjo.jpg"
+                 alt="Logo"
+                 class="rounded"
+                 style="width: 120px;
+                        height: 120px;
+                        margin-bottom: 20px;
+                        border-radius: 50%;">
+
+            <hr>
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="classlist.html">Class List</a></li>
+                    <li><a href="tasks.html">Tasks</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+
+                    <li>
+                        <a href="#logout"
+                           onclick="Verifylogout(); return false;">
+                           Log Out
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="content-panel">
+
+            <div class="top-bar">
+
+                <div>
+
+                    <h2>Information and Communications Technology</h2>
+
+                    <p style="margin: 8px 0 0; color: #475569;">
+                        The Curriculum
+                    </p>
+
+                </div>
+
+            </div>
+
+            <section class="card">
+
+                <h3>Quarter Work Plan</h3>
+
+                <ol class="quarter-list">
+
+                    <li class="quarter-item">
+
+                        <h4>
+                            <span class="section-title">
+                                I. 1st Quarter
+                            </span>
+                        </h4>
+
+                        <ul>
+                            <li>Introduction to HTML</li>
+                            <li>Basic CSS Styling</li>
+                            <li>Quarter Project</li>
+                        </ul>
+
+                    </li>
+
+                    <li class="quarter-item">
+
+                        <h4>
+                            <span class="section-title">
+                                II. 2nd Quarter
+                            </span>
+                        </h4>
+
+                        <ul>
+                            <li>Introduction to Bootstrap</li>
+                            <li>Bootstrap with Forms</li>
+                            <li>Quarter Project</li>
+                        </ul>
+
+                    </li>
+
+                    <li class="quarter-item">
+
+                        <h4>
+                            <span class="section-title">
+                                III. 3rd Quarter
+                            </span>
+                        </h4>
+
+                        <ul>
+                            <li>Introduction to JavaScript</li>
+                            <li>JavaScript data types, operators and variables</li>
+                            <li>JavaScript functions and events</li>
+                            <li>Quarter Project</li>
+                        </ul>
+
+                    </li>
+
+                    <li class="quarter-item">
+
+                        <h4>
+                            <span class="section-title">
+                                IV. 4th Quarter
+                            </span>
+                        </h4>
+
+                        <ul>
+                            <li>Conditional Statements</li>
+                            <li>Iteration Statements</li>
+                            <li>Quarter Project</li>
+                        </ul>
+
+                    </li>
+
+                </ol>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div class="sticky-item">
+
+    <p style="background-color: #475569;
+              color: #fff;
+              font-weight: bold;">
+
+        9-Sapphire: Group 5
+
+    </p>
+
+</div>
+
+<script>
+
+function Verifylogout() {
+
+    if (confirm("Are you sure you want to log out?")) {
+
+        window.location.href = 'index.html';
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

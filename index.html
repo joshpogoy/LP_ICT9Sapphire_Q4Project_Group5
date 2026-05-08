@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #223751;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    
+    <form onsubmit="authenticate(event)" id="loginForm">
+        <img src="240_F_1114151666_hVky5499PWOaeqzgwKduGk7UCnQeDAjo.jpg" class="rounded" style="width: 150px; height: 150px; display: block; margin: 0 auto 20px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+        <span>
+            <h1>Login</h1>
+        </span>
+        <label class="chicken"> Username </label>
+        <i><input type="text" id="username" required placeholder="Enter Username" style="text-align: center;">
+        
+        <label class="chicken"> Password </label>
+        <input type="password" id="password" required placeholder="Enter Password" style="text-align: center;">
+        <div>
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe" class="checkbox">Stay Logged In</label>
+        </div>
+        <div class="button-row">
+            <button type="submit">Login</button>
+            <input type="reset" value="Cancel">
+        </div>
+        <hr>
+        <div id="InvalidAttempt"></div>
+        <p class="forgot"><a href="#">Forgot username / password?</a></p>
+    </form>
+
+
+
+
+
+
+
+<div class="sticky-item">
+
+    <p style="background-color: #475569;
+              color: #fff;
+              font-weight: bold;">
+
+        9-Sapphire: Group 5
+
+    </p>
+
+</div>
+
+
+    <script>
+        let attemptCount = 0;
+    const maxAttempts = 3;
+
+    function authenticate(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const message = document.getElementById("InvalidAttempt");
+        const button = document.querySelector('#loginForm button[type="submit"]');
+
+        
+        if (button.disabled) return;
+
+        if (username === 'janedoe' && password === '1234') {
+            alert("Welcome " + username + "!");
+            attemptCount = 0;
+            message.innerHTML = "";
+            window.location.href = 'dashboard.html';
+            return;
+        }
+
+        attemptCount++;
+        message.innerHTML = `Incorrect username and/or password. Attempt ${attemptCount} of ${maxAttempts}.`;
+
+        if (attemptCount >= maxAttempts) {
+            button.disabled = true;
+            message.innerHTML = "Too many failed attempts. Try again in 3 seconds.";
+
+            setTimeout(function () {
+                attemptCount = 0;
+                button.disabled = false;
+                message.innerHTML = "";
+            }, 3000);
+        }
+    }
+    </script>
+
+
+</body>
+</html>
